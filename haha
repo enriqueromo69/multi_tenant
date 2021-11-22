@@ -1,0 +1,19 @@
+
+sudo nano /etc/apache2/sites-available/tenant.conf
+sudo mkdir -p /ntfs/htdocs/zekasystem_laravel/tenant/public/
+
+<VirtualHost tenan.test:80>
+    ServerAdmin admin@tenan.test
+    ServerName tenan.test
+    ServerAlias *.tenan.test
+    DocumentRoot /mnt/ntfs/htdocs/zekasystem_laravel/multi-tenancy/public/
+    #ErrorLog ${APACHE_LOG_DIR}/error.log
+    #CustomLog ${APACHE_LOG_DIR}/access.log
+</VirtualHost>
+
+sudo a2ensite tenant.conf
+sudo systemctl restart apache2
+
+###fin contenido
+sudo a2ensite desing.conf
+## reiniciamos los servicios
